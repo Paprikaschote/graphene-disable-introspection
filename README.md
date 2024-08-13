@@ -17,11 +17,13 @@ To use the middleware in your Graphene project, you need to add it to your Graph
 #### Python Usage
 Import the middleware and add it to your schema.
 ```python
+from graphene_disable_introspection import DisableIntrospectionMiddleware
+
 GraphqlView.as_view(middleware=[DisableIntrospectionMiddleware()])
 ```
 
 #### Django Usage
-Add the middleware to your Django settings.
+Add the middleware to your Django settings. I recommand to add it to the top of the middleware list.
 ```python
 GRAPHENE = {
     ...
