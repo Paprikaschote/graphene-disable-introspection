@@ -20,7 +20,7 @@ setup(
     author=about["__author__"],
     author_email=about["__author_email__"],
     url=about["__url__"],
-    download_url="https://github.com/Paprikaschote/graphene-disable-introspection/archive/refs/tags/v0.1.2.tar.gz",
+    download_url="https://github.com/Paprikaschote/graphene-disable-introspection/archive/refs/tags/v0.1.3.tar.gz",
     keywords=[
         "django",
         "graphene",

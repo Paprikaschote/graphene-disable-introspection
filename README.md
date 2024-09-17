@@ -1,4 +1,7 @@
 # Graphene Middleware to Disable Introspection
+[![PyPI version](https://badge.fury.io/py/graphene-disable-introspection.svg)](https://badge.fury.io/py/graphene-disable-introspection)
+![Static Badge](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-blue)
+
 
 This middleware for Python's Graphene library disables introspection queries, enhancing the security of your GraphQL API by preventing clients from discovering the schema.
 
