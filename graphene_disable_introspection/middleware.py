@@ -1,4 +1,4 @@
-from django.conf import settings
+from graphene_disable_introspection.conf import settings
 
 
 class DisableIntrospectionMiddleware:
