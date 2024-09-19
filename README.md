@@ -34,7 +34,7 @@ Add the middleware to your Django settings. I recommend to add it to the top of 
 GRAPHENE = {
     ...
     "MIDDLEWARE": [
-        "graphene_disable_introspection.DisableIntrospectionMiddleware",
+        "graphene_disable_introspection.middleware.DisableIntrospectionMiddleware",
         ...
     ],
 }
@@ -43,13 +43,13 @@ GRAPHENE = {
 Alternatively, you can deactivate Graphene introspection for the production system only.
 ```python
 if os.environ.get("APP_SETTINGS") == "production":
-    GRAPHENE["MIDDLEWARE"].insert(0, "graphene_disable_introspection.DisableIntrospectionMiddleware")
+    GRAPHENE["MIDDLEWARE"].insert(0, "graphene_disable_introspection.middleware.DisableIntrospectionMiddleware")
 ```
 
 ### Python Usage
 Import the middleware and add it to your schema.
 ```python
-from graphene_disable_introspection import DisableIntrospectionMiddleware
+from graphene_disable_introspection.middleware import DisableIntrospectionMiddleware
 
 GraphqlView.as_view(middleware=[DisableIntrospectionMiddleware()])
 ```
