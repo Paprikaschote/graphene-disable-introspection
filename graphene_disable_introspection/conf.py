@@ -1,7 +1,9 @@
 from django.conf import settings as dj_settings
 from django.core.signals import setting_changed
 
-from graphene_disable_introspection import validators
+from graphene_disable_introspection.validators import (
+    validate_disabled_introspection_types,
+)
 
 __all__ = ["settings"]
 
@@ -54,10 +56,6 @@ class GrapheneDisableIntrospectionSettings(object):
         self._settings[attr] = value
 
 
-# This is our global settings object
-settings = GrapheneDisableIntrospectionSettings()
-
-
 # Signal handler to reload settings when needed
 def reload_settings(*args, **kwargs):
     val = kwargs.get("setting")
@@ -67,3 +65,6 @@ def reload_settings(*args, **kwargs):
 
 # Connect the setting_changed signal to our handler
 setting_changed.connect(reload_settings)
+
+# This is our global settings object
+settings = GrapheneDisableIntrospectionSettings()
