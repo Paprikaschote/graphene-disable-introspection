@@ -14,7 +14,12 @@ class GrapheneDisableIntrospectionSettings(object):
     the ``setting_changed`` signal is dispatched.
     """
 
-    SETTINGS = {"DISABLED_INTROSPECTION_TYPES", ["__schema", "__type", "__typename"]}
+    SETTINGS = {
+        "DISABLED_INTROSPECTION_TYPES": (
+            "DISABLED_INTROSPECTION_TYPES",
+            ["__schema", "__type", "__typename"],
+        )
+    }
 
     def __init__(self):
         # make sure we don't assign self._settings directly here, to avoid
